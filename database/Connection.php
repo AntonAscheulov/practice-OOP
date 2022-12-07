@@ -3,12 +3,12 @@
 class Connection
 {
 
-    public static function connect()
+    public static function connect($config)
     {
         $pdo = new PDO(
-          'mysql:host=127.0.0.1:3306; charset=utf8; dbname=app-a',
-          'root',
-          ''
+          "{$config['dns']}; charset={$config['charset']}; dbname={$config['dbname']}",
+          $config['username'],
+          $config['password'],
         );
         return $pdo;
     }

@@ -2,6 +2,7 @@
 
 class QueryBuilder
 {
+
     protected $pdo;
 
     public function __construct($pdo)
@@ -11,9 +12,9 @@ class QueryBuilder
 
     public function getAll()
     {
-        $sql = 'SELECT * FROM posts';
+        $sql    = 'SELECT * FROM posts';
         $result = $this->pdo->query($sql);
-        $posts = $result->fetchAll(PDO::FETCH_ASSOC);
+        $posts  = $result->fetchAll(PDO::FETCH_ASSOC);
 
         return $posts;
     }
