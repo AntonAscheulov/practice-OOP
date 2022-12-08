@@ -32,7 +32,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <a href="#" class="btn btn-success">Add Post</a>
+            <a href="/create.php" class="btn btn-success">Add Post</a>
             <table class="table">
                 <thead>
                 <tr>
@@ -45,7 +45,7 @@
                 <?php foreach ($posts as $post):?>
                 <tr>
                     <th scope="row"><?= $post['id']?></th>
-                    <td><?= $post['title']?></td>
+                    <td><a href = "/show.php?id=<?= $post['id']?>"><?= $post['title']?></td>
                     <td>
                         <a href="#" class="btn btn-warning">Edit</a>
                         <a href="#" class="btn btn-danger">Delete</a>
